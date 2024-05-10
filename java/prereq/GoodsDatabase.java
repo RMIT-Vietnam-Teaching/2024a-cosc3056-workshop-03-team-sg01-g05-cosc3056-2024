@@ -17,19 +17,25 @@ public class GoodsDatabase {
    }
 
    // Get the number of listings in the database
-   int getDatabaseSize() {
+   public int getDatabaseSize() {
       // TODO: Implement
-      return 0;
+      return goods.size();
    }
 
    public ArrayList<Listing> getAllListings() {
       // TODO: Implement
-      return new ArrayList<Listing>();
+      return goods;
    }
 
    public ArrayList<Listing> getListingsByTitle(String title) {
       // TODO: Implement
-      return new ArrayList<Listing>();
+      ArrayList<Listing> result = new ArrayList<Listing>();
+      for(Listing listing : goods) {
+         if(listing.getTitle().equals(title)) {
+            result.add(listing);
+         }
+      }
+      return result;
    }
 
 }
